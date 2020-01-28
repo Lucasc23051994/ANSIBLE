@@ -1,0 +1,12 @@
+--- #MODELO DE 3 CAMADAS PARA INSTALAÇAO DE APLICAÇOES -> BANCO DE DADOS/SERVIDOR WEB/ APLICAÇOES
+- hosts: database
+  roles:
+    - mysql
+
+- hosts: wordpress #quais hosts controlados serão afetados
+  roles:
+    - webserver
+    - wordpress
+
+    #PARA RODAR O .YML A SINTAXE É "ansible-playbook -i "grupo" (hosts no caso)
+    #SEGUIDO DO NOME DO ARQUIVO DE PLAYBOOK, NO CASO "provision.yml"
